@@ -4,22 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lalit Granites - Premium Granite Solutions</title>
+  
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  
+  <!-- AOS (Animate On Scroll) CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HoRXHIbA5Kf0A+dOyBnm1u+ZkzmI+eVdSpZ7KpfY3L+HS9S8Ml8HdovBZpGZvCTxK8C+an3o6N2PL8r0vOIM3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
   <style>
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: #f8f9fa;
       color: #333;
+      scroll-behavior: smooth; /* Enables smooth scrolling */
     }
     /* Navbar Styling */
     .navbar {
@@ -55,17 +60,6 @@
       z-index: 2;
       text-align: center;
       color: #fff;
-      animation: fadeInUp 1.5s ease-in-out;
-    }
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
     }
     /* Media Query for Mobile: Adjust Hero Section Height */
     @media (max-width: 768px) {
@@ -80,8 +74,10 @@
     }
     .product-img {
       width: 100%;
-      border-radius: 8px;
-      transition: transform 0.3s;
+	  height: 300px; /* Set a fixed height */
+	  object-fit: cover; /* Ensures image covers the area, cropping as needed */
+	  border-radius: 8px;
+	  transition: transform 0.3s;
     }
     .product-img:hover {
       transform: scale(1.05);
@@ -129,7 +125,7 @@
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
         <ul class="navbar-nav">
-          <!-- Updated nav links to reference section IDs -->
+          <!-- Anchor links referencing the section IDs -->
           <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
           <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
@@ -140,9 +136,9 @@
   </nav>
 
   <!-- Hero Section with id "home" -->
-  <section id="home" class="hero-section">
+  <section id="home" class="hero-section" data-aos="fade" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <div class="hero-overlay"></div>
-    <div class="hero-text">
+    <div class="hero-text" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
       <h1 class="display-4 fw-bold">Experience the Elegance of Granite</h1>
       <p class="lead">Where timeless beauty meets modern craftsmanship.</p>
       <a href="#products" class="btn btn-lg btn-outline-light mt-3">Explore Our Collection</a>
@@ -150,7 +146,7 @@
   </section>
 
   <!-- Image Slider -->
-  <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+  <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <img src="Img1.jpg" class="d-block w-100" alt="Granite 1" />
@@ -171,7 +167,7 @@
   </div>
 
   <!-- About Us Section with id "about" -->
-  <section id="about" class="container my-5">
+  <section id="about" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <h2 class="text-center section-title">About Us</h2>
     <p class="text-center">
       Lalit Granites, based in Lalitpur, Uttar Pradesh, is synonymous with quality
@@ -180,44 +176,44 @@
     </p>
   </section>
 
-  <!-- Product Gallery (already has id "products") -->
-  <section id="products" class="container my-5">
+  <!-- Product Gallery with id "products" -->
+  <section id="products" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <h2 class="text-center section-title">Our Products</h2>
     <div class="row g-4">
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/400x300" class="product-img" alt="Premium Black Granite" />
-        <h5 class="text-center mt-2">Premium Black Granite</h5>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200">
+        <img src="https://www.regattaexports.com/wp-content/uploads/2015/11/New-Imperial-Red-1568x1568-1.webp" class="product-img" alt="Premium Black Granite" />
+        <h5 class="text-center mt-2">Premium Red Granite</h5>
       </div>
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/400x300" class="product-img" alt="Luxury Brown Granite" />
-        <h5 class="text-center mt-2">Luxury Brown Granite</h5>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="150">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS92nmPpYMhVVXKdXQRrCmFhVerKXOg4DvXw&s" class="product-img" alt="Luxury Brown Granite" />
+        <h5 class="text-center mt-2">Luxury Black Granite</h5>
       </div>
-      <div class="col-md-4">
-        <img src="https://via.placeholder.com/400x300" class="product-img" alt="White Marble Granite" />
-        <h5 class="text-center mt-2">White Marble Granite</h5>
+      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="300">
+        <img src="https://img1.exportersindia.com/product_images/bc-small/2019/1/6079513/red-granite-blocks-1548657804-4675625.jpeg" class="product-img" alt="White Marble Granite" />
+        <h5 class="text-center mt-2">Granite blocks</h5>
       </div>
     </div>
   </section>
 
   <!-- Contact Section with id "contact" -->
-  <section id="contact" class="container my-5">
+  <section id="contact" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <h2 class="text-center section-title">Contact Us</h2>
     <!-- Row 1: Contact Details -->
     <div class="row">
       <div class="col-12 text-center">
-        <p><strong>Address:</strong> Lalit Granites, Lalitpur, Uttar Pradesh</p>
-        <p><strong>Phone:</strong> +91-9876543210</p>
-        <p><strong>Email:</strong> info@lalitgranites.com</p>
+        <p><strong>Address:</strong> Lalit Granites,Dailwara, Lalitpur, Uttar Pradesh, India | Pin : 284403</p>
+        <p><strong>Phone:</strong> +91-9415734164</p>
+        <p><strong>Email:</strong> lalitgranites@gmail.com</p>
       </div>
     </div>
     <!-- Row 2: Social Icons -->
     <div class="row my-4">
       <div class="col-12 text-center">
         <div class="social-icons">
-          <a href="https://www.facebook.com/yourPage" target="_blank">
+          <a href="https://www.facebook.com/awanish.shukla.52" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
           </a>
-          <a href="https://www.instagram.com/yourPage" target="_blank">
+          <a href="https://www.instagram.com/awanish_shukla_23?igsh=MWg0MHk0N2h1dnh3" target="_blank">
             <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
           </a>
           <a href="https://wa.me/919415734163" target="_blank">
@@ -249,7 +245,7 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <div class="container">
       <p>&copy; 2025 Lalit Granites. All Rights Reserved.</p>
     </div>
@@ -257,5 +253,16 @@
 
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- AOS (Animate On Scroll) JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-6W0HI2F2W2k0k58L4O1/lduNxyvK+6kJ3NMGd2CK3UXTrH9TqgLkDQ4I1Ul+GOkzwpy+4N+dQOtnsW4kscxpAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    // Initialize AOS with global options for smooth easing and a slightly longer duration.
+    AOS.init({
+      easing: 'ease-in-out',
+      duration: 1200,
+      once: true  // Animation occurs only once as you scroll down.
+    });
+  </script>
 </body>
 </html>
