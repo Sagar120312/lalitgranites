@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lalit Granites - Premium Granite Solutions</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    /* Navbar Styling */
+    .navbar {
+      background-color: #1c1c1c;
+      padding: 1rem 2rem;
+    }
+    .navbar-brand,
+    .nav-link {
+      color: #fff !important;
+    }
+    .nav-link:hover {
+      color: #f1c40f !important;
+    }
+    /* Hero Section */
+    .hero-section {
+      position: relative;
+      background: url('https://via.placeholder.com/1500x800?text=Granite+Background') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    /* Media Query for Mobile: Adjust Hero Section Height */
+    @media (max-width: 768px) {
+      .hero-section {
+        height: 50vh;
+      }
+    }
+    /* Carousel & Images */
+    .carousel-item img {
+      height: 500px;
+      object-fit: cover;
+    }
+    .product-img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .product-img:hover {
+      transform: scale(1.05);
+    }
+    /* Section Titles */
+    .section-title {
+      position: relative;
+      margin-bottom: 40px;
+      font-weight: 600;
+    }
+    .section-title::after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background-color: #f1c40f;
+      display: block;
+      margin: 10px auto 0;
+    }
+    /* Contact Section Social Icons */
+    .social-icons {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .social-icons img {
+      width: 24px;
+      height: 24px;
+    }
+    /* Footer */
+    .footer {
+      background-color: #1c1c1c;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Lalit Granites</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-text">
+      <h1 class="display-4 fw-bold">Experience the Elegance of Granite</h1>
+      <p class="lead">Where timeless beauty meets modern craftsmanship.</p>
+      <a href="#products" class="btn btn-lg btn-outline-light mt-3">Explore Our Collection</a>
+    </div>
+  </section>
+
+  <!-- Image Slider -->
+  <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="Img1.jpg" class="d-block w-100" alt="Granite 1" />
+      </div>
+      <div class="carousel-item">
+        <img src="Img2.jpg" class="d-block w-100" alt="Granite 2" />
+      </div>
+      <div class="carousel-item">
+        <img src="Img3.jpg" class="d-block w-100" alt="Granite 3" />
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- About Us Section -->
+  <section class="container my-5">
+    <h2 class="text-center section-title">About Us</h2>
+    <p class="text-center">
+      Lalit Granites, based in Lalitpur, Uttar Pradesh, is synonymous with quality
+      and innovation in granite solutions. With over three decades of expertise,
+      we deliver excellence in every slab.
+    </p>
+  </section>
+
+  <!-- Product Gallery -->
+  <section id="products" class="container my-5">
+    <h2 class="text-center section-title">Our Products</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/400x300" class="product-img" alt="Premium Black Granite" />
+        <h5 class="text-center mt-2">Premium Black Granite</h5>
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/400x300" class="product-img" alt="Luxury Brown Granite" />
+        <h5 class="text-center mt-2">Luxury Brown Granite</h5>
+      </div>
+      <div class="col-md-4">
+        <img src="https://via.placeholder.com/400x300" class="product-img" alt="White Marble Granite" />
+        <h5 class="text-center mt-2">White Marble Granite</h5>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="container my-5">
+    <h2 class="text-center section-title">Contact Us</h2>
+    <!-- Row 1: Contact Details -->
+    <div class="row">
+      <div class="col-12 text-center">
+        <p><strong>Address:</strong> Lalit Granites,Dailwara, Lalitpur, Uttar Pradesh, India | Pin : 284403</p>
+        <p><strong>Phone:</strong> +91-9415734164</p>
+        <p><strong>Email:</strong> lalitgranites@google.com</p>
+      </div>
+    </div>
+    <!-- Row 2: Social Icons -->
+    <div class="row my-4">
+      <div class="col-12 text-center">
+        <div class="social-icons">
+          <a href="https://www.facebook.com/yourPage" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook">
+          </a>
+          <a href="https://www.instagram.com/awanish_shukla_23?igsh=MWg0MHk0N2h1dnh3" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+          </a>
+          <a href="https://wa.me/919415734163" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Row 3: Contact Form -->
+    <div class="row">
+      <div class="col-12">
+        <form action="https://formspree.io/f/yourFormID" method="POST">
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" name="name" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" name="_replyto" required />
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Lalit Granites. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
