@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
   
   <!-- AOS (Animate On Scroll) CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-HoRXHIbA5Kf0A+dOyBnm1u+ZkzmI+eVdSpZ7KpfY3L+HS9S8Ml8HdovBZpGZvCTxK8C+an3o6N2PL8r0vOIM3A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
   
   <style>
     body {
@@ -40,13 +40,50 @@
     }
     /* Hero Section */
     .hero-section {
-      position: relative;
-      background: url('https://via.placeholder.com/1500x800?text=Granite+Background') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+	  position: relative;
+	  background: url('your-image.jpg') center/cover no-repeat;
+	  height: 70vh;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.hero-section::after {
+	  content: "";
+	  position: absolute;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background: rgba(51, 11, 21, 0.5); /* Adjust opacity */
+	  z-index: 1;
+	}
+
+	.hero-text h1,
+	.hero-text p {
+	  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	}
+
+	.hero-text .btn {
+	  font-weight: bold;              /* Bold text */
+	  background-color: #ffffff;      /* Lighter, white background */
+	  color: #1c1c1c;                 /* Dark text for contrast */
+	  border: 2px solid #ffffff;      /* White border */
+	  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.3), 0 12px 10px rgba(0, 0, 0, 0.2);  /* 3D look */
+	  transition: transform 0.1s, box-shadow 0.1s, background-color 0.2s, border-color 0.2s;
+	}
+
+	.hero-text .btn:hover {
+	  background-color: #f8f9fa;      /* Slightly different light shade on hover */
+	  border-color: #f8f9fa;
+	  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.3), 0 4px 4px rgba(0, 0, 0, 0.2);
+	}
+
+	.hero-text .btn:active {
+	  transform: translateY(4px);    /* Button press effect */
+	  box-shadow: 0 4px 0 rgba(0, 0, 0, 0.3), 0 6px 6px rgba(0, 0, 0, 0.2);
+	}
+
     .hero-overlay {
       position: absolute;
       top: 0;
@@ -71,17 +108,104 @@
     .carousel-item img {
       height: 500px;
       object-fit: cover;
+      cursor: pointer; /* Indicates image is clickable */
     }
-    .product-img {
-      width: 100%;
-	  height: 300px; /* Set a fixed height */
-	  object-fit: cover; /* Ensures image covers the area, cropping as needed */
-	  border-radius: 8px;
-	  transition: transform 0.3s;
+    /* Centering the product album container */
+	.product-album {
+		position: relative;
+		width: 300px; /* Increased width of the stack */
+		height: 200px; /* Increased height */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		margin: 0 auto; /* Center the album horizontally */
+	}
+
+	/* Styling each image inside the product album */
+	.product-img {
+		position: absolute;
+		width: 120px; /* Increased image size */
+		height: 120px; /* Increased image size */
+		object-fit: cover;
+		cursor: pointer;
+		margin-left: 8%;
+		transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+		border: 3px solid #fff; /* Adding border around images */
+		border-radius: 8px; /* Rounded corners */
+	}
+
+	.product-img:nth-child(1) {
+		left: 0;
+		z-index: 1;
+	}
+
+	.product-img:nth-child(2) {
+		left: 30px; /* Adjust to have more spacing */
+		z-index: 2;
+	}
+
+	.product-img:nth-child(3) {
+		left: 60px;
+		z-index: 3;
+	}
+	
+	.product-img:nth-child(4) {
+		left: 90px;
+		z-index: 3;
+	}
+	
+	.product-img:nth-child(5) {
+		left: 120px;
+		z-index: 3;
+	}
+	.product-img:nth-child(6) {
+		left: 150px;
+		z-index: 3;
+	}
+
+	/* Hover effects */
+	.product-img:hover {
+		transform: scale(1.1); /* Slight zoom effect */
+		box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+	}
+	/* Make the product images stack in a more pronounced way */
+    .product-album img {
+        position: absolute;
+        top: 0;
     }
-    .product-img:hover {
-      transform: scale(1.05);
+
+    
+    /* Style for product names */
+    .product-name {
+	margin-left: 5%;
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    line-height: 1.4;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 90%; /* Ensure full width to help centering */
+	}
+
+
+    .product-name:hover {
+        transform: scale(1.05);
+        box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.3);
     }
+
+
+	
+	
     /* Section Titles */
     .section-title {
       position: relative;
@@ -112,6 +236,11 @@
       color: #fff;
       text-align: center;
       padding: 20px;
+    }
+    /* Modal Image Styling */
+    #modalImage {
+      border-radius: 10px;
+      border: 2px solid #f1c40f;
     }
   </style>
 </head>
@@ -149,13 +278,19 @@
   <div id="carouselExample" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="3000" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="Img1.jpg" class="d-block w-100" alt="Granite 1" />
+        <img src="slider/Img1.jpg" class="d-block w-100" alt="Granite 1" />
       </div>
       <div class="carousel-item">
-        <img src="Img2.jpg" class="d-block w-100" alt="Granite 2" />
+        <img src="slider/Img2.jpg" class="d-block w-100" alt="Granite 2" />
       </div>
       <div class="carousel-item">
-        <img src="Img3.jpg" class="d-block w-100" alt="Granite 3" />
+        <img src="slider/Img3.jpg" class="d-block w-100" alt="Granite 3" />
+      </div>
+	  <div class="carousel-item">
+        <img src="slider/Img4.jpg" class="d-block w-100" alt="Granite 4" />
+      </div>
+	  <div class="carousel-item">
+        <img src="slider/Img5.jpg" class="d-block w-100" alt="Granite 5" />
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -177,23 +312,164 @@
   </section>
 
   <!-- Product Gallery with id "products" -->
-  <section id="products" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
-    <h2 class="text-center section-title">Our Products</h2>
-    <div class="row g-4">
-      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200">
-        <img src="https://www.regattaexports.com/wp-content/uploads/2015/11/New-Imperial-Red-1568x1568-1.webp" class="product-img" alt="Premium Black Granite" />
-        <h5 class="text-center mt-2">Premium Red Granite</h5>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="150">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS92nmPpYMhVVXKdXQRrCmFhVerKXOg4DvXw&s" class="product-img" alt="Luxury Brown Granite" />
-        <h5 class="text-center mt-2">Luxury Black Granite</h5>
-      </div>
-      <div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="300">
-        <img src="https://img1.exportersindia.com/product_images/bc-small/2019/1/6079513/red-granite-blocks-1548657804-4675625.jpeg" class="product-img" alt="White Marble Granite" />
-        <h5 class="text-center mt-2">Granite blocks</h5>
-      </div>
-    </div>
-  </section>
+  <!-- Product Gallery with id "products" -->
+	<!-- Product Section -->
+	<section id="products" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
+		<h2 class="text-center section-title">Our Products</h2>
+		<div class="row g-4">
+			<!-- Product 1 -->
+			<div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200">
+				<div class="product-album">
+					<img src="product1/Img5.jpeg" class="product-img" alt="Product 1 Image 5" data-bs-toggle="modal" data-bs-target="#product1Modal" />
+					<img src="product1/Img4.jpeg" class="product-img" alt="Product 1 Image 4" data-bs-toggle="modal" data-bs-target="#product1Modal" />
+					<img src="product1/Img1.jpeg" class="product-img" alt="Product 1 Image 1" data-bs-toggle="modal" data-bs-target="#product1Modal" />
+					<img src="product1/Img2.jpeg" class="product-img" alt="Product 1 Image 2" data-bs-toggle="modal" data-bs-target="#product1Modal" />
+					<img src="product1/Img3.jpeg" class="product-img" alt="Product 1 Image 3" data-bs-toggle="modal" data-bs-target="#product1Modal" />
+				</div>
+				<h5 class="text-center mt-2 product-name">Premium Polished Red Granite</h5>
+			</div>
+
+			<!-- Product 2 -->
+			<div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="300">
+				<div class="product-album">
+					<img src="product2/Img6.jpg" class="product-img" alt="Product 2 Image 6" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+					<img src="product2/Img1.jpeg" class="product-img" alt="Product 2 Image 1" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+					<img src="product2/Img2.jpg" class="product-img" alt="Product 2 Image 2" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+					<img src="product2/Img3.jpeg" class="product-img" alt="Product 2 Image 3" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+					<img src="product2/Img4.jpeg" class="product-img" alt="Product 2 Image 4" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+					<img src="product2/Img5.jpeg" class="product-img" alt="Product 2 Image 5" data-bs-toggle="modal" data-bs-target="#product2Modal" />
+				</div>
+				<h5 class="text-center mt-2 product-name">Rough Granite Blocks</h5>
+			</div>
+
+			<!-- Product 3 -->
+			<div class="col-md-4" data-aos="zoom-in" data-aos-easing="ease-in-out" data-aos-duration="1200" data-aos-delay="600">
+				<div class="product-album">
+					<img src="product3/Img1.jpeg" class="product-img" alt="Product 3 Image 1" data-bs-toggle="modal" data-bs-target="#product3Modal" />
+					<img src="product3/Img2.jpg" class="product-img" alt="Product 3 Image 2" data-bs-toggle="modal" data-bs-target="#product3Modal" />
+					<img src="product3/Img3.jpg" class="product-img" alt="Product 3 Image 3" data-bs-toggle="modal" data-bs-target="#product3Modal" />
+					<img src="product3/Img4.jpeg" class="product-img" alt="Product 3 Image 4" data-bs-toggle="modal" data-bs-target="#product3Modal" />
+					<img src="product3/Img5.jpg" class="product-img" alt="Product 3 Image 5" data-bs-toggle="modal" data-bs-target="#product3Modal" />
+				</div>
+				<h5 class="text-center mt-2 product-name">Granite cobbles</h5>
+			</div>
+		</div>
+	</section>
+
+	<!-- Modal for Product 1 -->
+	<div class="modal fade" id="product1Modal" tabindex="-1" aria-labelledby="product1ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div id="carouselProduct1" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="product1/Img1.jpeg" class="d-block w-100" alt="Product 1 Image 1">
+							</div>
+							<div class="carousel-item">
+								<img src="product1/Img2.jpeg" class="d-block w-100" alt="Product 1 Image 2">
+							</div>
+							<div class="carousel-item">
+								<img src="product1/Img3.jpeg" class="d-block w-100" alt="Product 1 Image 3">
+							</div>
+							<div class="carousel-item">
+								<img src="product1/Img4.jpeg" class="d-block w-100" alt="Product 1 Image 4">
+							</div>
+							<div class="carousel-item">
+								<img src="product1/Img5.jpeg" class="d-block w-100" alt="Product 1 Image 5">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct1" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselProduct1" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Product 2 -->
+	<div class="modal fade" id="product2Modal" tabindex="-1" aria-labelledby="product2ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div id="carouselProduct2" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="product2/Img1.jpeg" class="d-block w-100" alt="Product 2 Image 1">
+							</div>
+							<div class="carousel-item">
+								<img src="product2/Img2.jpg" class="d-block w-100" alt="Product 2 Image 2">
+							</div>
+							<div class="carousel-item">
+								<img src="product2/Img3.jpeg" class="d-block w-100" alt="Product 2 Image 3">
+							</div>
+							<div class="carousel-item">
+								<img src="product2/Img4.jpeg" class="d-block w-100" alt="Product 2 Image 4">
+							</div>
+							<div class="carousel-item">
+								<img src="product2/Img5.jpeg" class="d-block w-100" alt="Product 2 Image 5">
+							</div>
+							<div class="carousel-item">
+								<img src="product2/Img6.jpg" class="d-block w-100" alt="Product 2 Image 6">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct2" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselProduct2" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Modal for Product 3 -->
+	<div class="modal fade" id="product3Modal" tabindex="-1" aria-labelledby="product3ModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-body">
+					<div id="carouselProduct3" class="carousel slide" data-bs-ride="carousel">
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<img src="product3/Img1.jpeg" class="d-block w-100" alt="Product 3 Image 1">
+							</div>
+							<div class="carousel-item">
+								<img src="product3/Img2.jpg" class="d-block w-100" alt="Product 3 Image 2">
+							</div>
+							<div class="carousel-item">
+								<img src="product3/Img3.jpg" class="d-block w-100" alt="Product 3 Image 3">
+							</div>
+							<div class="carousel-item">
+								<img src="product3/Img4.jpeg" class="d-block w-100" alt="Product 3 Image 4">
+							</div>
+							<div class="carousel-item">
+								<img src="product3/Img5.jpg" class="d-block w-100" alt="Product 3 Image 5">
+							</div>
+						</div>
+						<button class="carousel-control-prev" type="button" data-bs-target="#carouselProduct3" data-bs-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Previous</span>
+						</button>
+						<button class="carousel-control-next" type="button" data-bs-target="#carouselProduct3" data-bs-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="visually-hidden">Next</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 
   <!-- Contact Section with id "contact" -->
   <section id="contact" class="container my-5" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="1200">
@@ -201,7 +477,7 @@
     <!-- Row 1: Contact Details -->
     <div class="row">
       <div class="col-12 text-center">
-        <p><strong>Address:</strong> Lalit Granites,Dailwara, Lalitpur, Uttar Pradesh, India | Pin : 284403</p>
+        <p><strong>Address:</strong> Lalit Granites, Dailwara, Lalitpur, Uttar Pradesh, India | Pin : 284403</p>
         <p><strong>Phone:</strong> +91-9415734164</p>
         <p><strong>Email:</strong> lalitgranites@gmail.com</p>
       </div>
@@ -251,17 +527,47 @@
     </div>
   </footer>
 
+  <!-- Image Preview Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body p-0">
+          <img src="" alt="Image Preview" class="img-fluid w-100" id="modalImage">
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Bootstrap JS Bundle -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   
   <!-- AOS (Animate On Scroll) JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-6W0HI2F2W2k0k58L4O1/lduNxyvK+6kJ3NMGd2CK3UXTrH9TqgLkDQ4I1Ul+GOkzwpy+4N+dQOtnsW4kscxpAA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    // Initialize AOS with global options for smooth easing and a slightly longer duration.
+    // Initialize AOS with global options for smooth easing.
     AOS.init({
       easing: 'ease-in-out',
       duration: 1200,
       once: true  // Animation occurs only once as you scroll down.
+    });
+
+    // Attach click event listeners to all slider images for preview.
+    document.querySelectorAll('#carouselExample .carousel-item img').forEach(function(img) {
+      img.addEventListener('click', function() {
+        // Set the modal image src to the clicked image's src.
+        document.getElementById('modalImage').src = this.src;
+        // Show the modal.
+        var imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+        imageModal.show();
+      });
+    });
+
+    // Close the modal when clicking anywhere inside it.
+    document.getElementById('imageModal').addEventListener('click', function() {
+      var modalInstance = bootstrap.Modal.getInstance(document.getElementById('imageModal'));
+      if (modalInstance) {
+        modalInstance.hide();
+      }
     });
   </script>
 </body>
